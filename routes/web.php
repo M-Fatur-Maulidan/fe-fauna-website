@@ -25,7 +25,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
