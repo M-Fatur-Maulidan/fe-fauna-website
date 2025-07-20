@@ -12,16 +12,6 @@ class AuthController extends Controller
         return view('auth/login');
     }
 
-    public function register()
-    {
-        return view('auth/register'); // Redirect to registration page
-    }
-
-    public function forgotPassword()
-    {
-        return view('auth/forgot-password'); // Redirect to forgot password page
-    }
-
     public function login(Request $request)
     {
         $request->validate([
@@ -29,7 +19,7 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        $response = Http::post('http://127.0.0.1:3000/api/v1/auth/login', [
+        $response = Http::post(env('API_BASE_URL') . '/auth/login', [
             'email' => $request->email,
             'password' => $request->password,
         ]);
@@ -47,6 +37,39 @@ class AuthController extends Controller
 
             return redirect()->back()->withErrors(['status' => $errorMessage]);
         }
+    }
+
+    public function registerIndex()
+    {
+        return view('auth/register'); // Redirect to registration page
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+            'telepon' => 'required|string|max:15',
+        ]);
+
+        $response = Http::post(env('API_BASE_URL') . '/auth/register', [
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'password' => $request->password,
+            'telepon' => $request->telepon,
+        ]);
+
+        if ($response->successful()) {
+            return redirect()->route('login')->with('status', 'Registration successful. Please log in.');
+        }
+
+        return redirect()->back()->withErrors(['status' => $response->json('message', 'Registration failed. Please try again.')]);
+    }
+
+    public function forgotPasswordIndex()
+    {
+        return view('auth/forgot-password'); // Redirect to forgot password page
     }
 
     public function logout()

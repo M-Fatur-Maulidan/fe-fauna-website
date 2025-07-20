@@ -34,6 +34,11 @@
                     {{ $errors->first() }}
                 </div>
             @endif
+            @if(session('status'))
+                <div class="absolute top-5 left-1/2 -translate-x-1/2 bg-green-100 border border-green-500 text-green-700 p-4 rounded-lg z-50 w-auto max-w-md text-center">
+                    {{ session('status') }}
+                </div>
+            @endif
 
             @yield('content')
         </div>
