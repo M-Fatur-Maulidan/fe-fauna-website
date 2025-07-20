@@ -16,6 +16,7 @@ use App\Http\Controllers\Portal\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/gallery', [\App\Http\Controllers\portal\GalleryController::class, 'index'])->name('gallery');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
