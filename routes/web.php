@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Portal\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
-Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'])->name('register');
-Route::get('/forgot-password', [App\Http\Controllers\LoginController::class, 'forgotPassword'])->name('forgot.password');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
-Route::post('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login.post');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
