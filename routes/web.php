@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
+Route::get('/register', [App\Http\Controllers\LoginController::class, 'register'])->name('register');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'login'])->name('login.post');

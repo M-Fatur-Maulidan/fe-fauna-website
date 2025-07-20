@@ -11,11 +11,19 @@ class LoginController extends Controller
         return view('login/login');
     }
 
+    public function register()
+    {
+        return view('login/register'); // Redirect to registration page
+    }
+
     public function login(Request $request)
     {
-        // Logic for handling login
-        // Validate the request, authenticate the user, etc.
-
         return redirect()->route('home'); // Redirect to home after login
+    }
+
+    public function logout()
+    {
+        // Logic to handle logout
+        return redirect()->route('login'); // Redirect to login page after logout
     }
 }
