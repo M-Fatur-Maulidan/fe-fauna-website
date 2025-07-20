@@ -59,44 +59,76 @@
 
         <div class="swiper team-slider relative">
             <div class="swiper-wrapper">
-                {{-- Tim 1 --}}
                 <div class="swiper-slide">
                     <div class="text-center">
-                        <img src="https://i.pravatar.cc/150?u=jane" alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                        <h3 class="text-xl font-bold">Jane Doe</h3>
-                        <p class="text-gray-500">Founder & Chief Editor</p>
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="M. Fatur Maulidan Azzahra" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124907</p>
+                        <h3 class="text-xl font-bold">M. Fatur Maulidan Azzahra</h3>
+                        <p class="text-gray-500">Project Manager</p>
                     </div>
                 </div>
-                {{-- Tim 2 --}}
                 <div class="swiper-slide">
                     <div class="text-center">
-                        <img src="https://i.pravatar.cc/150?u=john" alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                        <h3 class="text-xl font-bold">John Smith</h3>
-                        <p class="text-gray-500">Lead Photographer</p>
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Rizki Maulana Hakim" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124317</p>
+                        <h3 class="text-xl font-bold">Rizki Maulana Hakim</h3>
+                        <p class="text-gray-500">Quality Assurance</p>
                     </div>
                 </div>
-                {{-- Tim 3 --}}
                 <div class="swiper-slide">
                     <div class="text-center">
-                        <img src="https://i.pravatar.cc/150?u=alex" alt="Alex Green" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                        <h3 class="text-xl font-bold">Alex Green</h3>
-                        <p class="text-gray-500">Conservation Specialist</p>
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Asep Saepul" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124324</p>
+                        <h3 class="text-xl font-bold">Asep Saepul</h3>
+                        <p class="text-gray-500">System Analyst</p>
                     </div>
                 </div>
-                {{-- Tim 4 (Tambahan untuk demo slider) --}}
                 <div class="swiper-slide">
                     <div class="text-center">
-                        <img src="https://i.pravatar.cc/150?u=sara" alt="Sara Connor" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                        <h3 class="text-xl font-bold">Sara Connor</h3>
-                        <p class="text-gray-500">Content Writer</p>
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Muhammad Faiz Rizqullah" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124330</p>
+                        <h3 class="text-xl font-bold">Muhammad Faiz Rizqullah</h3>
+                        <p class="text-gray-500">Dev-Ops</p>
                     </div>
                 </div>
-                {{-- Tim 5 (Tambahan untuk demo slider) --}}
                 <div class="swiper-slide">
                     <div class="text-center">
-                        <img src="https://i.pravatar.cc/150?u=mike" alt="Mike Ross" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                        <h3 class="text-xl font-bold">Mike Ross</h3>
-                        <p class="text-gray-500">Community Manager</p>
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Rasyid Kusuma Hidayat" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124335</p>
+                        <h3 class="text-xl font-bold">Rasyid Kusuma Hidayat</h3>
+                        <p class="text-gray-500">UI/UX Designer</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Putri Alexa Maharani" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124340</p>
+                        <h3 class="text-xl font-bold">Putri Alexa Maharani</h3>
+                        <p class="text-gray-500">Front-End Developer</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Rahul Weya" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124345</p>
+                        <h3 class="text-xl font-bold">Rahul Weya</h3>
+                        <p class="text-gray-500">Front-End Developer</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Ibda Muhafid Romdoni" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124350</p>
+                        <h3 class="text-xl font-bold">Ibda Muhafid Romdoni</h3>
+                        <p class="text-gray-500">Back-End Developer</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="{{ asset('image/anggota/icon-orang.png') }}" alt="Muhammad Andhika Aristya Ridwan" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <p class="text-sm">10124357</p>
+                        <h3 class="text-xl font-bold">Muhammad Andhika Aristya Ridwan</h3>
+                        <p class="text-gray-500">Back-End Developer</p>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('layouts.portal') {{-- Gunakan layout portal yang sudah kita buat --}}
+@extends('layouts.portal')
 
 @section('content')
 
@@ -11,7 +11,7 @@
             Jelajahi Keajaiban Dunia Satwa
         </h1>
         <p class="text-lg md:text-xl max-w-3xl mb-8">
-            Temukan informasi, galeri menakjubkan, dan upaya konservasi untuk melindungi satwa liar di seluruh dunia.
+            Temukan informasi, galeri menakjubkan, dan kenali fauna yang ada diseluruh dunia.
         </p>
         <a href="#fitur" class="bg-lime-500 hover:bg-lime-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform transform hover:scale-105">
             Mulai Menjelajah
@@ -22,11 +22,11 @@
 <section id="fitur" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-2 text-gray-800">Temukan Lebih Dalam</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto mb-12">Website kami menyediakan berbagai sumber daya untuk para pencinta satwa.</p>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-12">Mari menjelajahi keindahan dan keanekaragaman satwa di seluruh dunia.</p>
 
         <div class="grid md:grid-cols-3 gap-12">
+            {{-- Card 1 --}}
             <a href="{{ route('gallery') }}" class="hover:shadow-lg transition-shadow duration-300">
-                {{-- Card 1 --}}
                 <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                     <div class="bg-lime-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                         <svg class="w-8 h-8 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -43,15 +43,16 @@
                 <h3 class="text-xl font-bold mb-3">Fakta & Edukasi</h3>
                 <p class="text-gray-600">Pelajari fakta menarik, habitat, dan perilaku unik dari berbagai spesies hewan.</p>
             </div>
-
             {{-- Card 3 --}}
+            <a href="{{ route('about') }}" class="hover:shadow-lg transition-shadow duration-300">
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="bg-lime-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                     <svg class="w-8 h-8 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.724 7.724a1 1 0 011.414 0l3.536 3.536a1 1 0 010 1.414l-3.536 3.536a1 1 0 01-1.414-1.414L10.586 12 7.724 9.136a1 1 0 010-1.414zM15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Dukung Konservasi</h3>
-                <p class="text-gray-600">Ketahui bagaimana Anda dapat berpartisipasi dalam upaya pelestarian satwa liar.</p>
+                <h3 class="text-xl font-bold mb-3">Tentang Kita</h3>
+                <p class="text-gray-600">Ketahui bagaimana kami berkontribusi dalam pengembangan website ini.</p>
             </div>
+            </a>
         </div>
     </div>
 </section>
