@@ -29,4 +29,4 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin');
