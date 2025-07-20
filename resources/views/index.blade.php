@@ -2,9 +2,9 @@
 
 @section('content')
 
-<section class="relative h-screen bg-cover bg-center text-white" style="background-image: url('https://images.unsplash.com/photo-1474511320723-9a56873867b5?q=80&w=2072')">
+<section class="relative h-screen bg-cover bg-center text-white" style="background-image: url('image/fauna/singa.jpg')">
     {{-- Overlay gelap untuk membuat teks lebih terbaca --}}
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
         <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
@@ -25,15 +25,16 @@
         <p class="text-gray-600 max-w-2xl mx-auto mb-12">Website kami menyediakan berbagai sumber daya untuk para pencinta satwa.</p>
 
         <div class="grid md:grid-cols-3 gap-12">
-            {{-- Card 1 --}}
-            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <div class="bg-lime-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
-                    <svg class="w-8 h-8 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <a href="{{ route('gallery') }}" class="hover:shadow-lg transition-shadow duration-300">
+                {{-- Card 1 --}}
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="bg-lime-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-lime-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Galeri Satwa</h3>
+                    <p class="text-gray-600">Lihat koleksi foto satwa liar berkualitas tinggi dari berbagai belahan dunia.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Galeri Satwa</h3>
-                <p class="text-gray-600">Lihat koleksi foto satwa liar berkualitas tinggi dari berbagai belahan dunia.</p>
-            </div>
-
+            </a>
             {{-- Card 2 --}}
             <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <div class="bg-lime-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
@@ -71,7 +72,7 @@
 
             {{-- Kolom Gambar (Opsional, tapi mempercantik) --}}
             <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
-                 <img src="https://images.unsplash.com/photo-1590835439399-3176394125f6?q=80&w=1887" alt="Harimau" class="w-64 h-64 object-cover rounded-full border-4 border-lime-400">
+                 <img src="{{ asset('image/human-edited.jpg') }}" alt="Harimau" class="w-64 h-64 rounded-full border-4 border-lime-300 shadow-2xl">
             </div>
         </div>
     </div>

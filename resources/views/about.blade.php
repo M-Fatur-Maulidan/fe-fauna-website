@@ -8,14 +8,14 @@
             {{-- Kolom Teks --}}
             <div class="md:w-1/2">
                 <h2 class="text-sm font-bold uppercase text-lime-500 mb-2">Tentang Kami</h2>
-                <h1 class="text-4xl font-bold text-gray-800 mb-6">Misi Kami: Menjembatani Manusia dan Alam Liar</h1>
+                <h1 class="text-4xl font-bold text-gray-800 mb-6">LINUX MINT</h1>
                 <p class="text-gray-600 leading-relaxed">
-                    Kami percaya bahwa pengetahuan adalah kunci untuk menumbuhkan kepedulian. FaunaPedia didirikan dengan tujuan untuk menjadi sumber informasi yang akurat dan inspirasi visual yang memukau tentang keanekaragaman hayati di planet kita. Melalui edukasi, kami berharap dapat mendorong lebih banyak orang untuk peduli dan berpartisipasi aktif dalam upaya konservasi.
+                    Kami dari kelompok distro MINT, memilih tema fauna sebagai identitas visual kami. Inspirasi ini berangkat dari logo Linux Mint yang didominasi warna hijau warna yang kerap diasosiasikan dengan flora. Namun, dalam keseimbangan alam, flora hampir tak pernah hadir tanpa fauna. Keduanya saling melengkapi, sebagaimana teknologi dan kreativitas dalam pengembangan sistem.
                 </p>
             </div>
             {{-- Kolom Gambar --}}
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1455218873509-8097305ee378?q=80&w=1887" alt="Orangutan" class="rounded-lg shadow-2xl w-full">
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1511216113906-8f57bb83e776?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Singa" class="rounded-lg shadow-lg shadow-lime-500/40 w-2/3">
             </div>
         </div>
     </div>
@@ -55,28 +55,74 @@
 
 <section class="py-20 bg-white">
     <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-12 text-gray-800">Tim di Balik Layar</h2>
-        <div class="grid md:grid-cols-3 gap-12">
-            {{-- Tim 1 --}}
-            <div class="text-center">
-                <img src="https://i.pravatar.cc/150?u=jane" alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                <h3 class="text-xl font-bold">Jane Doe</h3>
-                <p class="text-gray-500">Founder & Chief Editor</p>
+        <h2 class="text-3xl font-bold mb-12 text-gray-800">Tim Linux Mint</h2>
+
+        <div class="swiper team-slider relative">
+            <div class="swiper-wrapper">
+                {{-- Tim 1 --}}
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=jane" alt="Jane Doe" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">Jane Doe</h3>
+                        <p class="text-gray-500">Founder & Chief Editor</p>
+                    </div>
+                </div>
+                {{-- Tim 2 --}}
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=john" alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">John Smith</h3>
+                        <p class="text-gray-500">Lead Photographer</p>
+                    </div>
+                </div>
+                {{-- Tim 3 --}}
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=alex" alt="Alex Green" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">Alex Green</h3>
+                        <p class="text-gray-500">Conservation Specialist</p>
+                    </div>
+                </div>
+                {{-- Tim 4 (Tambahan untuk demo slider) --}}
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=sara" alt="Sara Connor" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">Sara Connor</h3>
+                        <p class="text-gray-500">Content Writer</p>
+                    </div>
+                </div>
+                {{-- Tim 5 (Tambahan untuk demo slider) --}}
+                <div class="swiper-slide">
+                    <div class="text-center">
+                        <img src="https://i.pravatar.cc/150?u=mike" alt="Mike Ross" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
+                        <h3 class="text-xl font-bold">Mike Ross</h3>
+                        <p class="text-gray-500">Community Manager</p>
+                    </div>
+                </div>
             </div>
-            {{-- Tim 2 --}}
-            <div class="text-center">
-                <img src="https://i.pravatar.cc/150?u=john" alt="John Smith" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                <h3 class="text-xl font-bold">John Smith</h3>
-                <p class="text-gray-500">Lead Photographer</p>
-            </div>
-            {{-- Tim 3 --}}
-            <div class="text-center">
-                <img src="https://i.pravatar.cc/150?u=alex" alt="Alex Green" class="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg">
-                <h3 class="text-xl font-bold">Alex Green</h3>
-                <p class="text-gray-500">Conservation Specialist</p>
-            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </div>
 </section>
 
 @endsection
+
+@push('scripts')
+    <script>
+        const swiper = new Swiper('.team-slider', {
+            loop: true, // Membuat slider berputar tanpa henti
+            spaceBetween: 30, // Jarak antar slide
+
+            // Mengatur jumlah slide yang terlihat berdasarkan ukuran layar (responsif)
+            slidesPerView: 3,
+
+            // Navigation (panah kiri-kanan)
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+@endpush

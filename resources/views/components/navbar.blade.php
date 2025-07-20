@@ -15,7 +15,7 @@
                 <a href="{{ route('about') }}">
                     <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">About</div>
                 </a>
-                <a href="">
+                <a href="{{ route('contact') }}">
                     <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Contact</div>
                 </a>
                 <a href="{{ route('login') }}">
