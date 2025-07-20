@@ -6,10 +6,12 @@
         <div class="absolute inset-0 justify-items-end items-center w-full h-full">
             {{-- Konten di dalam wadah utama, seperti form login --}}
             <div class="bg-white opacity-90 w-1/2 h-full d-flex justify-items-center content-center">
-                <div class="flex flex-row justify-start w-full px-8 items-center gap-x-2">
-                    <img src="{{ asset('image/icon/back.png') }}" alt="Logo Back" class="w-4 h-4">
-                    <a href="#" class="text-lime-500 hover:underline text-md ">Back</a>
-                </div>
+                <a href="{{ route('home') }}">
+                    <div class="flex flex-row justify-start w-full px-8 items-center gap-x-2">
+                        <img src="{{ asset('image/icon/back.png') }}" alt="Logo Back" class="w-4 h-4">
+                        <div class="text-lime-500 hover:underline text-md ">Back</div>
+                    </div>
+                </a>
                 {{-- Form login yang diletakkan di tengah wadah --}}
                 <div class="w-3/4 h-3/4 px-8 pt-4 pb-4 rounded-lg d-flex flex-col justify-items-center content-center">
                     {{-- Bagian atas form login yang berisi logo dan judul halaman --}}
