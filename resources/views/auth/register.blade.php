@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.auth')
 
 @section('content')
     {{-- Wadah utama yang menutupi seluruh layar dan menggunakan gambar sebagai background --}}

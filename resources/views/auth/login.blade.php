@@ -1,4 +1,4 @@
-@extends('base')
+@extends('layouts.auth')
 
 @section('content')
     {{-- Wadah utama yang menutupi seluruh layar dan menggunakan gambar sebagai background --}}
@@ -28,7 +28,7 @@
                         <input type="password" class="border border-lime-500 rounded-md w-full p-2 mb-4" placeholder="Enter your password">
                         <div class="flex flex-row w-full justify-between content-end">
                             <a href="{{ route('register') }}" class="text-black-500 hover:underline">Create an Account</a>
-                            <a href="#" class="text-black-500 hover:underline">Forgot Password?</a>
+                            <a href="{{ route('forgot.password') }}" class="text-black-500 hover:underline">Forgot Password?</a>
                         </div>
                     </div>
                     <div class="flex justify-center mt-8">

@@ -8,12 +8,17 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login/login');
+        return view('auth/login');
     }
 
     public function register()
     {
-        return view('login/register'); // Redirect to registration page
+        return view('auth/register'); // Redirect to registration page
+    }
+
+    public function forgotPassword()
+    {
+        return view('auth/forgot-password'); // Redirect to forgot password page
     }
 
     public function login(Request $request)
