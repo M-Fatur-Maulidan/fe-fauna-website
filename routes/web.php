@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\Portal\HomeController;
+use App\Http\Controllers\portal\GalleryController;
+use App\Http\Controllers\portal\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,8 @@ use App\Http\Controllers\Portal\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/gallery', [\App\Http\Controllers\portal\GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
