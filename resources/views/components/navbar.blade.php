@@ -9,7 +9,7 @@
                 <a href="{{ route('home') }}">
                     <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Home</div>
                 </a>
-                <a href="">
+                <a href="{{ route('gallery') }}">
                     <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Gallery</div>
                 </a>
                 <a href="">
