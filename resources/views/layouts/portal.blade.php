@@ -18,13 +18,13 @@
         </style>
     </head>
     <body class="">
-        @include('component.navbar')
+        @include('components.navbar')
 
         <main>
             @yield('content') {{-- Konten halaman akan masuk di sini --}}
         </main>
 
-        @include('component.footer')
+        @include('components.footer')
 
         @stack('scripts')
     </body>
