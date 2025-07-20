@@ -78,7 +78,7 @@
                         <input type="email" name="email" id="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent transition">
                     </div>
                     {{-- Subjek --}}
-                     <div>
+                    <div>
                         <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
                         <input type="text" name="subject" id="subject" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent transition">
                     </div>
@@ -95,7 +95,6 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </section>

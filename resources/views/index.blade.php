@@ -64,7 +64,7 @@
             <div class="md:w-3/5 text-white">
                 <h2 class="text-3xl font-bold mb-4">Peduli dan Beraksi</h2>
                 <p class="mb-6 text-lime-100">
-                    Jadilah bagian dari komunitas kami. Dapatkan berita terbaru, artikel eksklusif, dan informasi event konservasi langsung di email Anda.
+                    Jadilah bagian dari komunitas kami. Bantu kami untuk mengembangkan website ini menjadi lebih baik.
                 </p>
                 <a href="{{ route('login') }}" class="bg-white text-lime-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-colors">
                     Daftar Sekarang
