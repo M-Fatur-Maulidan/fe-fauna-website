@@ -7,16 +7,16 @@
             </div>
             <div class="flex flex-row  items-center justify-evenly w-1/2">
                 <a href="{{ route('home') }}">
-                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Home</div>
+                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-xl">Home</div>
                 </a>
                 <a href="{{ route('gallery') }}">
-                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Gallery</div>
+                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-xl">Gallery</div>
                 </a>
                 <a href="{{ route('about') }}">
-                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">About</div>
+                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-xl">About</div>
                 </a>
                 <a href="{{ route('contact') }}">
-                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-lg">Contact</div>
+                    <div class="hover:bg-lime-500 hover:text-white p-1 px-2 rounded-xl">Contact</div>
                 </a>
                 <a href="{{ route('login') }}">
                     <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Login</button>
