@@ -17,14 +17,14 @@
             @php
                 // Contoh data gambar. Di aplikasi nyata, ini akan datang dari database.
                 $images = [
-                    ['url' => 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=1932', 'alt' => 'Macan Tutul'],
-                    ['url' => 'https://images.unsplash.com/photo-1516934024742-b362a1a4b494?q=80&w=1887', 'alt' => 'Burung Toucan'],
-                    ['url' => 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=2072', 'alt' => 'Gajah'],
-                    ['url' => 'https://images.unsplash.com/photo-1542488339-634532677d3a?q=80&w=1887', 'alt' => 'Iguana'],
-                    ['url' => 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=1920', 'alt' => 'Penyu Laut'],
-                    ['url' => 'https://images.unsplash.com/photo-1518461239931-118a1a953def?q=80&w=1887', 'alt' => 'Rubah Merah'],
-                    ['url' => 'https://images.unsplash.com/photo-1526082613535-9859943aee5a?q=80&w=1887', 'alt' => 'Katak Pohon'],
-                    ['url' => 'https://images.unsplash.com/photo-1534759846112-37f14e64dfd4?q=80&w=1887', 'alt' => 'Burung Hantu'],
+                    ['url' => 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=1932', 'alt' => 'Gajah'],
+                    ['url' => 'https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Macan'],
+                    ['url' => 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?q=80&w=2072', 'alt' => 'Panda'],
+                    ['url' => 'https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Rubah'],
+                    ['url' => 'https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Raja-udang Erasia'],
+                    ['url' => 'https://images.unsplash.com/photo-1733545913476-e30285b182fd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Katak'],
+                    ['url' => 'https://images.unsplash.com/photo-1692020365048-481b17d61fa9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Rusa'],
+                    ['url' => 'https://images.unsplash.com/photo-1652387754718-354ff606f0b8?q=80&w=1178&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Burung Pelikan'],
                 ];
             @endphp
 
@@ -48,21 +48,21 @@
         <div class="grid md:grid-cols-3 gap-8">
             {{-- Kategori 1 --}}
             <a href="#" class="relative h-64 rounded-lg overflow-hidden group shadow-lg">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1604940500627-7c873fd31720?q=80&w=2070')"></div>
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1456926631375-92c8ce872def?q=80&w=2070')"></div>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <h3 class="text-white text-2xl font-bold">Mamalia Darat</h3>
                 </div>
             </a>
             {{-- Kategori 2 --}}
             <a href="#" class="relative h-64 rounded-lg overflow-hidden group shadow-lg">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1456926631375-92c8ce872def?q=80&w=2070')"></div>
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <h3 class="text-white text-2xl font-bold">Burung Eksotis</h3>
                 </div>
             </a>
             {{-- Kategori 3 --}}
             <a href="#" class="relative h-64 rounded-lg overflow-hidden group shadow-lg">
-                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1535457609626-89a35e412a7a?q=80&w=2070')"></div>
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                     <h3 class="text-white text-2xl font-bold">Kehidupan Laut</h3>
                 </div>
