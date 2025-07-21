@@ -11,4 +11,9 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard'); // Assuming you have a view for the admin dashboard
     }
+    public function usersIndex()
+    {
+        // Logic to fetch and display users
+        return view('admin.users'); // Assuming you have a view for the admin users
+    }
 }

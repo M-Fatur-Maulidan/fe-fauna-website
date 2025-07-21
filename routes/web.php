@@ -8,6 +8,9 @@ use App\Http\Controllers\portal\GalleryController;
 use App\Http\Controllers\portal\AboutController;
 use App\Http\Controllers\portal\ContactController;
 
+use App\Http\Controllers\admin\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +33,6 @@ Route::get('/register', [AuthController::class, 'registerIndex'])->name('registe
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 Route::get('/forgot-password', [AuthController::class, 'forgotPasswordIndex'])->name('forgot.password');
 
-// Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/admin/users', [DashboardController::class, 'usersIndex'])->name('admin.users');
