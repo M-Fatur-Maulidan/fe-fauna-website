@@ -30,7 +30,13 @@ class AuthController extends Controller
 
             session(['api_token' => $data['data']['token']]);
 
-            return redirect()->route('admin.dashboard');
+            // dd($data);
+
+            if ($data['data']['token']['user']['roles'] === 'Admin') {
+                return redirect()->route('admin.dashboard');
+            }
+
+            return redirect()->route('home');
 
         } else {
             $errorMessage = $response->json('message', 'Login gagal. Silakan cek kembali email dan password Anda.');
