@@ -41,9 +41,21 @@
     <body class="">
         @include('components.navbar')
 
-        <main>
-            @yield('content') {{-- Konten halaman akan masuk di sini --}}
-        </main>
+        <div class="relative">
+            @if ($errors->any())
+                <div class="auto-hide-alert absolute top-5 left-1/2 -translate-x-1/2 bg-red-100 border border-red-500 text-red-700 p-4 rounded-lg z-50 w-auto max-w-md text-center">
+                    {{ $errors->first() }}
+                </div>
+            @endif
+
+            @if(session('success'))
+                <div class="auto-hide-alert absolute top-5 left-1/2 -translate-x-1/2 bg-green-100 border border-green-500 text-green-700 p-4 rounded-lg z-50 w-auto max-w-md text-center">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            @yield('content')
+        </div>
 
         @include('components.footer')
 
@@ -51,3 +63,26 @@
         @stack('scripts')
     </body>
 </html>
+
+<script>
+    // Tunggu hingga seluruh halaman selesai dimuat
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cari semua elemen dengan class 'auto-hide-alert'
+        const alertElements = document.querySelectorAll('.auto-hide-alert');
+
+        alertElements.forEach(function(element) {
+            // Atur waktu tunggu sebelum notifikasi disembunyikan
+            setTimeout(function() {
+                // Mulai efek fade out
+                element.style.transition = 'opacity 0.5s ease';
+                element.style.opacity = '0';
+
+                // Setelah transisi selesai, sembunyikan elemen sepenuhnya
+                setTimeout(function() {
+                    element.style.display = 'none';
+                }, 500); // Waktu ini harus sama dengan durasi transisi (0.5s)
+                
+            }, 3000); // 5000 milidetik = 5 detik
+        });
+    });
+</script>

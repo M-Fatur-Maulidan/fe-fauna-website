@@ -36,7 +36,7 @@ class AuthController extends Controller
                 return redirect()->route('admin.dashboard');
             }
 
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success', 'Login successful. Welcome back!');
 
         } else {
             $errorMessage = $response->json('message', 'Login gagal. Silakan cek kembali email dan password Anda.');
@@ -67,7 +67,7 @@ class AuthController extends Controller
         ]);
 
         if ($response->successful()) {
-            return redirect()->route('login')->with('status', 'Registration successful. Please log in.');
+            return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
         }
 
         return redirect()->back()->withErrors(['status' => $response->json('message', 'Registration failed. Please try again.')]);

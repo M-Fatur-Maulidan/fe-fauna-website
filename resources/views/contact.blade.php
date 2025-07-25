@@ -65,7 +65,7 @@
 
             <div class="bg-white p-8 rounded-lg shadow-lg">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6">Kirim Pesan</h2>
-                <form action="#" method="POST" class="space-y-6">
+                <form action="{{ route('contact.insert') }}" method="POST" class="space-y-6">
                     @csrf
                     {{-- Nama --}}
                     <div>
@@ -76,11 +76,6 @@
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Alamat Email</label>
                         <input type="email" name="email" id="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent transition">
-                    </div>
-                    {{-- Subjek --}}
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subjek</label>
-                        <input type="text" name="subject" id="subject" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-lime-500 focus:border-transparent transition">
                     </div>
                     {{-- Pesan --}}
                     <div>
