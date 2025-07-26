@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
 {
@@ -13,7 +13,14 @@ class DashboardController extends Controller
     }
     public function usersIndex()
     {
+        $accessToken = session('api_token')['accessToken'];
+        $response = Http::withToken($accessToken)->get(env('API_BASE_URL') . '/admin/users');
+
+        if ($response->failed()) {
+            return redirect()->back()->withErrors(['status' => 'Failed to fetch users.']);
+        } else {
+            return view('admin.users')->with(['users' => $response->json()['data']]); // Assuming you have a view for the admin users
+        }
         // Logic to fetch and display users
-        return view('admin.users'); // Assuming you have a view for the admin users
     }
 }

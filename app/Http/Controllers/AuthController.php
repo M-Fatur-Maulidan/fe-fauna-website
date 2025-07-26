@@ -24,7 +24,6 @@ class AuthController extends Controller
             'password' => $request->password,
         ]);
 
-
         if ($response->successful()) {
             $data = $response->json();
 

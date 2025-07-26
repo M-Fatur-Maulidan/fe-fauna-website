@@ -9,7 +9,7 @@ use App\Http\Controllers\portal\AboutController;
 use App\Http\Controllers\portal\ContactController;
 
 use App\Http\Controllers\admin\DashboardController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +37,6 @@ Route::get('/forgot-password', [AuthController::class, 'forgotPasswordIndex'])->
 Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 Route::get('/admin/users', [DashboardController::class, 'usersIndex'])->name('admin.users');
+
+//Users
+Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
