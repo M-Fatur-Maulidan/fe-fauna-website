@@ -23,19 +23,25 @@
                     ['url' => 'https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?q=80&w=697&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Rubah'],
                     ['url' => 'https://images.unsplash.com/photo-1486365227551-f3f90034a57c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Raja-udang Erasia'],
                     ['url' => 'https://images.unsplash.com/photo-1733545913476-e30285b182fd?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Katak'],
-                    ['url' => 'https://images.unsplash.com/photo-1692020365048-481b17d61fa9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Rusa'],
+                    ['url' => 'https://images.unsplash.com/photo-1611364059088-aa3f4b2523cb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Harimau Sumatra'],
                     ['url' => 'https://images.unsplash.com/photo-1652387754718-354ff606f0b8?q=80&w=1178&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'alt' => 'Burung Pelikan'],
                 ];
             @endphp
 
             @foreach ($images as $image)
+            {{-- Gambar Galeri --}}
             <div class="relative overflow-hidden rounded-lg group">
-                <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-end p-4">
-                    <h3 class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                        {{ $image['alt'] }}
-                    </h3>
-                </div>
+                <a href="{{ route('gallery.detail', ['id' => $loop->index]) }}">
+                    <img src="{{ $image['url'] }}" alt="{{ $image['alt'] }}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-white text-sm font-bold opacity-0 bg-black text-center rounded-lg px-2 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Foto oleh : John Doe</p>
+                    </div>
+                    <div class="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-end p-4">
+                        <h3 class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            {{ $image['alt'] }}
+                        </h3>
+                    </div>
+                </a>
             </div>
             @endforeach
         </div>

@@ -23,7 +23,10 @@ use App\Http\Controllers\admin\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery/{id}', [GalleryController::class, 'show'])->name('gallery.detail');
+
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contactInsert'])->name('contact.insert');
