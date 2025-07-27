@@ -25,6 +25,18 @@
             .swiper-pagination-bullet-active {
                 background: #84cc16;
             }
+
+            input[type=number]::-webkit-outer-spin-button,
+            input[type=number]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            input[type=number] {
+                -moz-appearance: textfield;
+                appearance: textfield;
+            }
+            
             button {
                 /* background-color: #84cc16 !important; */
                 border: 1px solid #ccc;

@@ -37,8 +37,6 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        // Logic to delete user
-        // Delete user by $id
         $response = Http::withToken(session('api_token')['accessToken'])
             ->delete(env('API_BASE_URL') . '/admin/users/' . $id);
 

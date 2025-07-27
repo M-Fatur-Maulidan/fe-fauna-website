@@ -57,27 +57,31 @@
     </div>
 </section>
 
-<section class="bg-white">
-    <div class="container mx-auto px-6 py-20">
-        <div class="flex flex-col md:flex-row items-center bg-lime-600 rounded-lg shadow-2xl p-8 md:p-12">
-            {{-- Kolom Teks --}}
-            <div class="md:w-3/5 text-white">
-                <h2 class="text-3xl font-bold mb-4">Peduli dan Beraksi</h2>
-                <p class="mb-6 text-lime-100">
-                    Jadilah bagian dari komunitas kami. Bantu kami untuk mengembangkan website ini menjadi lebih baik.
-                </p>
-                <a href="{{ route('login') }}" class="bg-white text-lime-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-colors">
-                    Daftar Sekarang
-                </a>
-            </div>
+@if (session('api_token'))
+    @if (session('api_token')['user']['roles'] == "user")
+        <section class="bg-white">
+            <div class="container mx-auto px-6 py-20">
+                <div class="flex flex-col md:flex-row items-center bg-lime-600 rounded-lg shadow-2xl p-8 md:p-12">
+                    {{-- Kolom Teks --}}
+                    <div class="md:w-3/5 text-white">
+                        <h2 class="text-3xl font-bold mb-4">Peduli dan Beraksi</h2>
+                        <p class="mb-6 text-lime-100">
+                            Jadilah bagian dari komunitas kami. Bantu kami untuk mengembangkan website ini menjadi lebih baik.
+                        </p>
+                        <a href="{{ route('register.collaborator') }}" class="bg-white text-lime-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-colors">
+                            Daftar Sekarang
+                        </a>
+                    </div>
 
-            {{-- Kolom Gambar (Opsional, tapi mempercantik) --}}
-            <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
-                 <img src="{{ asset('image/human-edited.jpg') }}" alt="Harimau" class="w-64 h-64 rounded-full border-4 border-lime-300 shadow-2xl">
+                    {{-- Kolom Gambar (Opsional, tapi mempercantik) --}}
+                    <div class="md:w-2/5 mt-8 md:mt-0 flex justify-center">
+                        <img src="{{ asset('image/human-edited.jpg') }}" alt="Harimau" class="w-64 h-64 rounded-full border-4 border-lime-300 shadow-2xl">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+    @endif
+@endif
 
 
 @endsection

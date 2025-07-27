@@ -29,9 +29,7 @@ class AuthController extends Controller
 
             session(['api_token' => $data['data']['token']]);
 
-            // dd($data);
-
-            if ($data['data']['token']['user']['roles'] === 'Admin') {
+            if ($data['data']['token']['user']['roles'] == 'Admin' || $data['data']['token']['user']['roles'] == 'Contributor') {
                 return redirect()->route('admin.dashboard');
             }
 
@@ -79,7 +77,16 @@ class AuthController extends Controller
 
     public function logout()
     {
-        // Logic to handle logout
-        return redirect()->route('login'); // Redirect to login page after logout
+        $response = Http::withToken(session('api_token')['accessToken'])
+            ->post(env('API_BASE_URL') . '/auth/logout', [
+                'token' => session('api_token')['refreshToken'],
+            ]);
+
+        if ($response->successful()) {
+            session()->forget('api_token'); // Clear the session
+            return redirect()->route('login')->with('success', 'Logout successful.');
+        }
+
+        return redirect()->route('login')->withErrors(['status' => 'Logout failed. Please try again.']);
     }
 }

@@ -23,6 +23,12 @@ use App\Http\Controllers\admin\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware(['auth.api_token'])->group(function () {
+    Route::get('/register-collaborator', [HomeController::class, 'indexRegisterCollaborator'])->name('register.collaborator');
+    Route::post('/register-collaborator', [HomeController::class, 'registerCollaborator'])->name('register.collaborator.post');
+    Route::post('/invoice', [HomeController::class, 'indexRegisterInvoice'])->name('invoice');
+    Route::get('/invoice', [HomeController::class, 'indexInvoice'])->name('invoice.index'); // Assuming this route is needed
+});
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/gallery/{id}', [GalleryController::class, 'show'])->name('gallery.detail');
@@ -36,6 +42,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::get('/register', [AuthController::class, 'registerIndex'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 Route::get('/forgot-password', [AuthController::class, 'forgotPasswordIndex'])->name('forgot.password');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
