@@ -11,14 +11,44 @@ class UserController extends Controller
     public function create()
     {
         // Logic to show user creation form
-        return view('admin.create_user'); // Assuming you have a view for creating users
+        return view('admin.users.create'); // Assuming you have a view for creating users
     }
 
     public function store(Request $request)
     {
-        // Logic to store new user data
-        // Validate and save user data here
-        return redirect()->route('admin.users.index')->with('success', 'User created successfully.');
+
+       $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'required|string|min:8',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // Contoh validasi untuk foto
+        ]);
+
+        // Inisialisasi HTTP Client dengan token
+        $httpClient = Http::withToken(session('api_token')['accessToken']);
+
+        // 2. Cek apakah ada file foto yang di-upload
+        if ($request->hasFile('foto')) {
+            // Jika ada file, gunakan ->attach()
+            $httpClient->attach(
+                'foto', // Ini adalah 'nama field' untuk file yang akan diterima backend lain
+                file_get_contents($request->file('foto')->getRealPath()), // Isi file
+                $request->file('foto')->getClientOriginalName() // Nama file asli
+            );
+        }
+        
+        // 3. Kirim request POST dengan data lain
+        //    Gunakan $request->except('foto') untuk mengirim semua input kecuali file
+        $response = $httpClient->post(
+            env('API_BASE_URL') . '/admin/users',
+            $request->except('foto')
+        );
+
+        if ($response->successful()) {
+            return redirect()->route('admin.users')->with('success', 'User created successfully.');
+        } else {
+            return redirect()->back()->withErrors(['status' => 'Failed to create user.']);
+        }
     }
 
     public function edit($id)

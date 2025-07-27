@@ -19,8 +19,19 @@ class DashboardController extends Controller
         if ($response->failed()) {
             return redirect()->back()->withErrors(['status' => 'Failed to fetch users.']);
         } else {
-            return view('admin.users')->with(['users' => $response->json()['data']]); // Assuming you have a view for the admin users
+            return view('admin.users.users')->with(['users' => $response->json()['data']]); // Assuming you have a view for the admin users
         }
         // Logic to fetch and display users
+    }
+
+    public function contentIndex() {
+        $accessToken = session('api_token')['accessToken'];
+        $response = Http::withToken($accessToken)->get(env('API_BASE_URL') . '/admin/contents');
+
+        if ($response->failed()) {
+            return redirect()->back()->withErrors(['status' => 'Failed to fetch contents.']);
+        } else {
+            return view('admin.content.content')->with(['contents' => $response->json()['data']]); // Assuming you have a view for the admin contents
+        }
     }
 }

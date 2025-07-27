@@ -4,6 +4,8 @@
     <title>Admin Dashboard</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Hapus blok <style> yang berisi semua kode Tailwind --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body class="bg-slate-200 min-h-screen flex">
     <aside class="w-64 bg-gray-800 text-white flex flex-col shrink-0">
@@ -19,7 +21,7 @@
                     <a href="{{ route('admin.dashboard') }}" class="block p-4 hover:bg-gray-700">Dashboard</a>
                     <a href="{{ route('admin.users') }}" class="block p-4 hover:bg-gray-700">Pengguna</a>
                 @endif
-                <a href="#" class="block p-4 hover:bg-gray-700">Manajemen Fauna</a>
+                <a href="{{ route('admin.contents') }}" class="block p-4 hover:bg-gray-700">Manajemen Fauna</a>
                 @if(session('api_token')['user']['roles'] == 'Admin')
                     <a href="#" class="block p-4 hover:bg-gray-700">Feedback</a>
                 @endif

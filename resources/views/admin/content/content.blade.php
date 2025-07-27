@@ -3,37 +3,36 @@
 @section('content')
     <div class="p-6">
         <div class="flex flex-row justify-between">
-            <h1 class="text-3xl font-bold text-gray-800 mb-6">Pengguna</h1>
+            <h1 class="text-3xl font-bold text-gray-800 mb-6">Manajemen Fauna</h1>
             <button class="mr-2 border-2 border-blue-500 bg-blue-500 px-2 my-3 rounded-lg text-white hover:border-blue-500 hover:bg-white hover:text-blue-500">Tambah</button>
         </div>
         <table class="min-w-full bg-white border border-gray-200">
             <thead>
                 <tr>
                     <th class="py-2 px-4 border-b">Nomor</th>
-                    <th class="py-2 px-4 border-b">Nama</th>
-                    <th class="py-2 px-4 border-b">Email</th>
+                    <th class="py-2 px-4 border-b">Nama Umum</th>
+                    <th class="py-2 px-4 border-b">Nama Ilmiah</th>
                     <th class="py-2 px-4 border-b">Aksi</th>
                 </tr>
             </thead>
             <tbody>
-                {{-- {{ dd($users[0]) }} --}}
-                @foreach ($users as $user)
+                @foreach ($contents as $content)
                     <tr align="center">
                         {{-- Display a sequential number for each row --}}
-                        <td class="py-2 px-4 border-b">{{ $user['no'] }}</td> 
+                        <td class="py-2 px-4 border-b">{{ $content['no'] }}</td> 
                         
-                        {{-- Access user properties using $user->propertyName --}}
-                        <td class="py-2 px-4 border-b">{{ $user['nama'] }}</td> 
-                        <td class="py-2 px-4 border-b">{{ $user['email'] }}</td>
+                        {{-- Access content properties using $content->propertyName --}}
+                        <td class="py-2 px-4 border-b">{{ $content['nama_umum'] }}</td> 
+                        <td class="py-2 px-4 border-b">{{ $content['nama_ilmiah'] }}</td>
                         
                         <td class="py-2 px-4 border-b">
                             {{-- Tombol Edit --}}
-                            <a href="/users/{{ $user['id'] }}/edit" class="text-blue-500 border-2 border-blue-500 py-1 px-2 rounded-lg hover:bg-blue-500 hover:text-white mr-2">Edit</a>
+                            <a href="/contents/{{ $content['id'] }}/edit" class="text-blue-500 border-2 border-blue-500 py-1 px-2 rounded-lg hover:bg-blue-500 hover:text-white mr-2">Edit</a>
                             
                             <div x-data="{ open: false }" class="inline">
                                 
                                 {{-- Tombol Pemicu Modal --}}
-                                <button @click="open = true" class="text-red-500 border-2 border-red-500 py-1 px-2 rounded-lg hover:bg-red-500 hover:text-white">
+                                <button @click="open = true" class="text-red-500 border-2 border-red-500 py-1 px-2 rounded-lg hover:bg-red-500 hover:text-white text-sm">
                                     Hapus
                                 </button>
 
@@ -49,7 +48,7 @@
                                             </button>
                                             
                                             {{-- Form untuk Aksi Hapus --}}
-                                            <form method="POST" action="{{ route('admin.users.destroy', $user['id']) }}" class="inline">
+                                            <form method="POST" action="" class="inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="text-white bg-red-500 border-2 border-red-500 py-1 px-4 rounded-lg hover:bg-red-600">

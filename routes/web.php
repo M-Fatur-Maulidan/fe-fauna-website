@@ -44,9 +44,18 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 Route::get('/forgot-password', [AuthController::class, 'forgotPasswordIndex'])->name('forgot.password');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
-Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-Route::get('/admin/users', [DashboardController::class, 'usersIndex'])->name('admin.users');
+Route::middleware(['auth.api_token'])->group(function () {
+    Route::get('/admin', [DashboardController::class, 'index'])->name('admin');
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/users', [DashboardController::class, 'usersIndex'])->name('admin.users');
+    Route::get('/admin/contents', [DashboardController::class, 'contentIndex'])->name('admin.contents');
+    
+    // Users
+    Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+    
+    // Contents
+});
 
-//Users
-Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
