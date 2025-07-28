@@ -1,7 +1,7 @@
 <div class="navbar bg-gray-50 shadow-md">
     <div class="container mx-auto">
         <div class="flex justify-between items-center py-4">
-            @if (!session('api_token') || session('api_token')['user']['roles'] == "User")
+            @if (!session('api_token') || session('api_token')['user']['roles'] == "user")
                 <a href="{{ route('home') }}" class="flex items-center">
                     <div class="flex flex-row items-center gap-x-2">
                         <img src="{{ asset('image/logo.png') }}" alt="Logo" class="w-12 h-12">

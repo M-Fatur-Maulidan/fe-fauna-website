@@ -23,7 +23,7 @@
                 @endif
                 <a href="{{ route('admin.contents') }}" class="block p-4 hover:bg-gray-700">Manajemen Fauna</a>
                 @if(session('api_token')['user']['roles'] == 'Admin')
-                    <a href="#" class="block p-4 hover:bg-gray-700">Feedback</a>
+                    <a href="{{ route('admin.contacts') }}" class="block p-4 hover:bg-gray-700">Feedback</a>
                 @endif
             </div>
             <div class="">

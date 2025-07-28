@@ -8,11 +8,15 @@
         {{-- Contoh Kartu Statistik --}}
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold text-gray-700">Total Pengguna</h3>
-            <p class="text-4xl font-bold text-gray-900 mt-2">1,250</p>
+            <p class="text-4xl font-bold text-gray-900 mt-2">{{ $dashboardData['data']['user'] }}</p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
             <h3 class="text-xl font-semibold text-gray-700">Data Fauna</h3>
-            <p class="text-4xl font-bold text-gray-900 mt-2">350</p>
+            <p class="text-4xl font-bold text-gray-900 mt-2">{{ $dashboardData['data']['content'] }}</p>
+        </div>
+         <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold text-gray-700">Data Feedback</h3>
+            <p class="text-4xl font-bold text-gray-900 mt-2">{{ $dashboardData['data']['contact'] }}</p>
         </div>
     </div>
 @endsection

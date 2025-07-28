@@ -9,7 +9,13 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard'); // Assuming you have a view for the admin dashboard
+        $accessToken = session('api_token')['accessToken'];
+        $response = Http::withToken($accessToken)->get(env('API_BASE_URL') . '/admin/dashboard');
+        if ($response->failed()) {
+            return redirect()->back()->withErrors(['status' => 'Failed to fetch dashboard data.']);
+        }
+
+        return view('admin.dashboard', ['dashboardData' => $response->json()]); // Assuming you have a view for the admin dashboard
     }
     public function usersIndex()
     {
@@ -32,6 +38,17 @@ class DashboardController extends Controller
             return redirect()->back()->withErrors(['status' => 'Failed to fetch contents.']);
         } else {
             return view('admin.content.content')->with(['contents' => $response->json()['data']]); // Assuming you have a view for the admin contents
+        }
+    }
+
+    public function contactIndex() {
+        $accessToken = session('api_token')['accessToken'];
+        $response = Http::withToken($accessToken)->get(env('API_BASE_URL') . '/admin/contacts');
+
+        if ($response->failed()) {
+            return redirect()->back()->withErrors(['status' => 'Failed to fetch contacts.']);
+        } else {
+            return view('admin.contact.contact')->with(['contacts' => $response->json()['data']]); // Assuming you have a view for the admin contacts
         }
     }
 }

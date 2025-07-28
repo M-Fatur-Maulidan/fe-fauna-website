@@ -10,6 +10,9 @@ use App\Http\Controllers\portal\ContactController;
 
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\admin\ContentController;
+
+use App\Http\Controllers\admin\ContactController as AdminContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +52,7 @@ Route::middleware(['auth.api_token'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/users', [DashboardController::class, 'usersIndex'])->name('admin.users');
     Route::get('/admin/contents', [DashboardController::class, 'contentIndex'])->name('admin.contents');
+    Route::get('/admin/contacts', [DashboardController::class, 'contactIndex'])->name('admin.contacts');
     
     // Users
     Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
@@ -57,5 +61,11 @@ Route::middleware(['auth.api_token'])->group(function () {
     Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
     
     // Contents
+    Route::get('/admin/contents/create', [ContentController::class, 'create'])->name('admin.contents.create');
+    Route::post('/admin/contents', [ContentController::class, 'store'])->name('admin.contents.store');
+    Route::delete('/admin/contents/{id}', [ContentController::class, 'destroy'])->name('admin.contents.destroy');
+
+    // Contacts
+    Route::delete('/admin/contacts/{id}', [AdminContactController::class, 'destroy'])->name('admin.contacts.destroy');
 });
 
