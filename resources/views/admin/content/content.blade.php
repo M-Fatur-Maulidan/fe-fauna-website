@@ -29,8 +29,8 @@
                         
                         <td class="py-2 px-4 border-b">
                             {{-- Tombol Edit --}}
-                            <a href="/contents/{{ $content['id'] }}/edit" class="text-blue-500 border-2 border-blue-500 py-1 px-2 rounded-lg hover:bg-blue-500 hover:text-white mr-2">Edit</a>
-                            
+                            <a href="{{ route('admin.contents.edit', $content['id']) }}" class="text-blue-500 border-2 border-blue-500 py-1 px-2 rounded-lg hover:bg-blue-500 hover:text-white mr-2">Edit</a>
+
                             <div x-data="{ open: false }" class="inline">
                                 
                                 {{-- Tombol Pemicu Modal --}}

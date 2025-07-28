@@ -63,7 +63,9 @@ Route::middleware(['auth.api_token'])->group(function () {
     
     // Contents
     Route::get('/admin/contents/create', [ContentController::class, 'create'])->name('admin.contents.create');
+    Route::get('/admin/contents/{id}/edit', [ContentController::class, 'edit'])->name('admin.contents.edit');
     Route::post('/admin/contents', [ContentController::class, 'store'])->name('admin.contents.store');
+    Route::put('/admin/contents/{id}', [ContentController::class, 'update'])->name('admin.contents.update');
     Route::delete('/admin/contents/{id}', [ContentController::class, 'destroy'])->name('admin.contents.destroy');
 
     // Contacts

@@ -48,6 +48,55 @@ class ContentController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        $response = Http::withToken(session('api_token')['accessToken'])
+            ->get(env('API_BASE_URL') . '/admin/contents/' . $id);
+
+        if ($response->successful()) {
+            $content = $response->json()['data'];
+            return view('admin.content.edit', ['content' => $content]); // Assuming you have a view for editing content
+        } else {
+            return redirect()->back()->withErrors(['status' => 'Failed to fetch content data.']);
+        }
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama_umum' => 'required|string',
+            'nama_ilmiah'  => 'required|string',
+            'deskripsi' => 'required|string',
+            'status_konservasi' => 'required|string',
+            'habitat' => 'required|string',
+            'makanan' => 'required|string',
+            'rentang_hidup' => 'required|string',
+        ]);
+
+        // Inisialisasi HTTP Client dengan token
+        $httpClient = Http::withToken(session('api_token')['accessToken']);
+
+        if ($request->hasFile('gambar')) {
+            // Jika ada file, gunakan ->attach()
+            $httpClient->attach(
+                'gambar', // Ini adalah 'nama field' untuk file yang akan diterima backend lain
+                file_get_contents($request->file('gambar')->getRealPath()), // Isi file
+                $request->file('gambar')->getClientOriginalName() // Nama file asli
+            );
+        }
+
+        $response = $httpClient->put(
+            env('API_BASE_URL') . '/admin/contents/' . $id,
+            $request->except('gambar')
+        );
+
+        if ($response->successful()) {
+            return redirect()->route('admin.contents')->with('success', 'Content updated successfully.');
+        } else {
+            return redirect()->back()->withErrors(['status' => 'Failed to update content.']);
+        }
+    }
+
     public function destroy($id)
     {
         $httpClient = Http::withToken(session('api_token')['accessToken']);
