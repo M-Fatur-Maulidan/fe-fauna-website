@@ -4,7 +4,7 @@
     <div class="p-6">
         <div class="flex flex-row justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-800">Tambah Data Fauna Baru</h1>
-            <a href="#"> {{-- Arahkan ke route index fauna --}}
+            <a href="{{ route('admin.contents') }}"> {{-- Arahkan ke route index fauna --}}
                 <button class="bg-white border-2 border-blue-500 text-blue-500 px-4 py-2 rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300">
                     Kembali
                 </button>

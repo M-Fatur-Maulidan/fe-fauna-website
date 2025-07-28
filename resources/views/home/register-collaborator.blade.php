@@ -10,9 +10,9 @@
       Wadah utama menggunakan Flexbox.
       'flex-nowrap' memastikan item tidak turun ke bawah.
     --}}
-    <form method="POST" action="{{ route('invoice') }}" class="w-full">
+    <form method="POST" action="{{ route('invoice') }}" class="w-full flex justify-center">
     @csrf {{-- Tambahkan CSRF token untuk keamanan --}}
-    <div class="relative w-full max-w-7xl flex flex-row flex-nowrap gap-6 md:gap-8">
+    <div class="relative w-full max-w-7xl flex flex-row flex-nowrap gap-6 md:gap-8 justify-center">
             <div class="w-1/3 shrink-0 bg-gray-800 bg-opacity-80 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-gray-700">
                 <h2 class="text-xl font-bold mb-6 text-center text-white">1. Isi Data Diri</h2>
                 <form class="space-y-4">
