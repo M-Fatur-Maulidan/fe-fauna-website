@@ -9,25 +9,25 @@
         <div class="grid md:grid-cols-5 gap-8 lg:gap-12">
             <div class="md:col-span-3">
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1611364059088-aa3f4b2523cb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                         alt="Harimau Sumatra" 
+                    <img src="{{ $item['gambar_url'] }}" 
+                         alt="{{ $item['nama_umum'] }}" 
                          class="w-full h-auto object-cover rounded-xl shadow-2xl">
                     <div class="absolute top-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
-                        Foto oleh: John Doe
+                        Dibuat oleh : {{ $item['created_by'] }}
                     </div>
                 </div>
             </div>
 
             <div class="md:col-span-2">
                 <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900">
-                    Harimau Sumatra
+                    {{ $item['nama_umum'] }}
                 </h1>
                 <p class="mt-2 text-xl font-medium text-gray-500 italic">
-                    Panthera tigris sumatrae
+                    {{ $item['nama_ilmiah'] }}
                 </p>
 
                 <p class="mt-6 text-gray-700 leading-relaxed">
-                    Harimau Sumatra adalah subspesies harimau terakhir yang bertahan di Indonesia. Dikenal dengan corak lorengnya yang lebih rapat dan warnanya yang lebih gelap, predator puncak ini merupakan penjaga kesehatan ekosistem hutan di Pulau Sumatra.
+                    {{ $item['deskripsi'] }}
                 </p>
 
                 {{-- Informasi Kunci --}}
@@ -38,23 +38,23 @@
                         <div class="flex items-center">
                             <span class="font-semibold w-32 shrink-0">Status Konservasi</span>
                             <span class="bg-red-100 text-red-800 text-sm font-bold px-3 py-1 rounded-full">
-                                Kritis (Critically Endangered)
+                                {{ $item['status_konservasi'] }}
                             </span>
                         </div>
                         {{-- Habitat --}}
                         <div class="flex items-center">
                             <span class="font-semibold w-32 shrink-0">Habitat</span>
-                            <span class="text-gray-700">Hutan Hujan Tropis</span>
+                            <span class="text-gray-700">{{ $item['habitat'] }}</span>
                         </div>
                         {{-- Makanan --}}
                         <div class="flex items-center">
                             <span class="font-semibold w-32 shrink-0">Makanan</span>
-                            <span class="text-gray-700">Karnivora (Rusa, Babi Hutan)</span>
+                            <span class="text-gray-700">{{ $item['makanan'] }}</span>
                         </div>
                         {{-- Rentang Hidup --}}
                         <div class="flex items-center">
                             <span class="font-semibold w-32 shrink-0">Rentang Hidup</span>
-                            <span class="text-gray-700">10-15 tahun (di alam liar)</span>
+                            <span class="text-gray-700">{{ $item['rentang_hidup'] }}</span>
                         </div>
                     </div>
                 </div>
