@@ -58,6 +58,7 @@ Route::middleware(['auth.api_token'])->group(function () {
     Route::get('/admin/users/create', [UserController::class, 'create'])->name('admin.users.create');
     Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
     Route::post('/admin/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('admin.users.update');
     Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy');
     
     // Contents
